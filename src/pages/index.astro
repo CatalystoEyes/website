@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<style>
+	.gradient-text {
+		background-image: linear-gradient(to right, #6366f1, #fd3e5d);
+    	-webkit-background-clip: text;
+    	background-clip: text;
+		color: transparent;
+	}
+	.gradient-text:hover {
+    background-image: linear-gradient(to right, #6366f1, #fd3e5d);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+</style>
+
+<Layout title="CatalystoEyes" 
+    seoTitle="CatalystoEyes"
+    seoDesc="Software Developer who use React, React native, Next.js, Astro, Nest and other tools"> 
+  <div class="my-auto">
+    <div class="mb-15">
+		<div class="mx-auto text-center">
+			<h1 class="text-5xl md:text-6xl pb-1 inline-block ease-in transition gradient-text">Hey 👋, I am Catalysto</h1>
+		</div>
+		<div id="typed-strings">
+        <p class="text-center">I'm <strong>Software Engineer</strong></p>
+        <p class="text-center">I'm <em>working</em> with <strong>React, Vue, Next.js, Node.js and other tools.</strong></p>
+      </div>
+      <div class="text-center mt-6"><span id="typed"></span></div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import Typed from 'typed.js'
+  var typed = new Typed('#typed', {
+    stringsElement: '#typed-strings',
+    typeSpeed: 40,
+    loop: true
+  });
+</script>

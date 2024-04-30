@@ -1,0 +1,27 @@
+---
+import MainHead from './MainHead.astro'
+import Nav from '../components/Navigation/Nav.astro'
+import Footer from '../components/Footer/Footer.astro'
+
+const { title, seoTitle, seoDesc } = Astro.props 
+
+---
+
+<html lang="en" data-theme="black">
+	<MainHead title={title} seoTitle={seoTitle} seoDesc={seoDesc}/>
+	<body class="grid gap-0" >
+		<Nav />
+		<slot/>
+		<Footer/>
+		<style>
+			body {
+				font-family: "Roboto", "sans-serif";
+				min-height: 100vh;
+			}
+			body::selection {
+					background-color: #222020; 
+					color: white;
+				}
+		</style>
+	</body>
+</html>
