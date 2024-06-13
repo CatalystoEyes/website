@@ -1,0 +1,25 @@
+---
+import TypedString from "./TypedString.vue";
+---
+<style>
+	.gradient-text {
+		background-image: linear-gradient(to right, #6366f1, #fd3e5d);
+    	-webkit-background-clip: text;
+    	background-clip: text;
+		color: transparent;
+	}
+	.gradient-text:hover {
+    background-image: linear-gradient(to right, #6366f1, #fd3e5d);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+</style>
+
+<div class="my-auto">
+    <div class="mb-15">
+		<div class="mx-auto text-center">
+			<h1 class="text-5xl md:text-6xl pb-1 inline-block ease-in transition gradient-text">Hey 👋, I am Catalysto</h1>
+		</div>
+		<TypedString client:load/>
+  </div>
+  </div>

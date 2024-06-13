@@ -5,12 +5,13 @@
     <link rel="canonical" href="https://catalystoeyes.github.io/" />
     <meta
       name="description"
-      content="Software Developer who use React, Next.js, Vue, Astro and other tools"
+      content="Software Developer who use React, React native, Next.js, Astro, Nest and other tools"
     />
     <meta name="robots" content="index, follow" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CatalystoEyes</title>
+    <link rel="icon" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,19 +20,58 @@
     />
     <link rel="stylesheet" href="./_astro/about.uz9tgDcl.css" />
     <style>
-      .gradient-text[data-astro-cid-j7pv25f6] {
+      .gradient-text[data-astro-cid-xf56a5a3] {
         background-image: linear-gradient(to right, #6366f1, #fd3e5d);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
-      .gradient-text[data-astro-cid-j7pv25f6]:hover {
+      .gradient-text[data-astro-cid-xf56a5a3]:hover {
         background-image: linear-gradient(to right, #6366f1, #fd3e5d);
         -webkit-background-clip: text;
         background-clip: text;
       }
     </style>
-    <script type="module" src="./_astro/hoisted.BMQhf3Jq.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const textElement = document.querySelector("#typed-strings");
+        const textsToType = [
+          "I'm Software Engineer.",
+          "I'm working with React, Vue, Next.js, Node.js and other tools.",
+        ];
+
+        let textIndex = 0;
+        let textPosition = 0;
+        let isBlinking = true;
+
+        function typeText() {
+          const currentText = textsToType[textIndex];
+
+          let visibleText = currentText.slice(0, textPosition);
+          if (isBlinking && textPosition % 2 === 0) {
+            visibleText += "|";
+          }
+          textElement.textContent = visibleText;
+
+          if (textPosition <= currentText.length) {
+            textPosition++;
+          } else {
+            isBlinking = false;
+            setTimeout(() => {
+              textIndex = (textIndex + 1) % textsToType.length;
+              textPosition = 0;
+              isBlinking = true;
+              typeText();
+            }, 2000);
+            return;
+          }
+
+          setTimeout(typeText, 50);
+        }
+
+        typeText();
+      });
+    </script>
   </head>
   <body class="grid gap-0" data-astro-cid-sckkx6r4>
     <header class="lg:flex p-5 gap-5">
@@ -317,30 +357,45 @@
         })();
       </script>
     </header>
-    <div class="my-auto" data-astro-cid-j7pv25f6>
-      <div class="mb-15" data-astro-cid-j7pv25f6>
-        <div class="mx-auto text-center" data-astro-cid-j7pv25f6>
+    <div class="my-auto" data-astro-cid-xf56a5a3>
+      <div class="mb-15" data-astro-cid-xf56a5a3>
+        <div class="mx-auto text-center" data-astro-cid-xf56a5a3>
           <h1
             class="text-5xl md:text-6xl pb-1 inline-block ease-in transition gradient-text"
-            data-astro-cid-j7pv25f6
+            data-astro-cid-xf56a5a3
           >
             Hey 👋, I am Catalysto
           </h1>
         </div>
-        <div id="typed-strings" data-astro-cid-j7pv25f6>
-          <p class="text-center" data-astro-cid-j7pv25f6>
-            I'm <strong data-astro-cid-j7pv25f6>Software Engineer</strong>
-          </p>
-          <p class="text-center" data-astro-cid-j7pv25f6>
-            I'm <em data-astro-cid-j7pv25f6>working</em> with
-            <strong data-astro-cid-j7pv25f6
-              >React, Vue, Next.js, Node.js and other tools.</strong
+        <style>
+          astro-island,
+          astro-slot,
+          astro-static-slot {
+            display: contents;
+          }
+        </style>
+
+        <astro-island
+          uid="ZMzGOG"
+          component-url="/_astro/TypedString.CkOTRuiv.js"
+          component-export="default"
+          renderer-url="/_astro/client.BmzKVRXX.js"
+          props='{"data-astro-cid-xf56a5a3":[0,true]}'
+          ssr=""
+          client="load"
+          opts='{"name":"TypedString","value":true}'
+          await-children=""
+          ><div data-astro-cid-xf56a5a3="true">
+            <div
+              id="typed-strings"
+              style="text-align: center; font-size: large; margin-top: 10px"
             >
-          </p>
-        </div>
-        <div class="text-center mt-6" data-astro-cid-j7pv25f6>
-          <span id="typed" data-astro-cid-j7pv25f6></span>
-        </div>
+              <p class="text-center">&nbsp;</p>
+            </div>
+            <div class="text-center mt-6"><span></span></div>
+          </div>
+          <!--astro:end--></astro-island
+        >
       </div>
     </div>
     <footer class="text-center mt-auto py-4">
@@ -350,15 +405,9 @@
       >
     </footer>
     <script lang="ts">
-      import Typed from "typed.js";
       document.querySelector("#copyright").textContent = new Date()
         .getFullYear()
         .toString();
-      var typed = new Typed("#typed", {
-        stringsElement: "#typed-strings",
-        typeSpeed: 40,
-        loop: true,
-      });
     </script>
   </body>
 </html>
