@@ -7,13 +7,14 @@ const { title, seoTitle, seoDesc } = Astro.props
 import '../base.css'
 ---
 
-<html lang="en" data-theme="black">
+<html lang="en" data-theme="black" >
 	<MainHead title={title} seoTitle={seoTitle} seoDesc={seoDesc}/>
 	<body class="grid gap-0" >
 		<Nav />
 		<slot/>
-		<Footer/>
-		<style>
+		<Footer />
+	</body>
+	<style>
 			body {
 				font-family: "Roboto", "sans-serif";
 				min-height: 100vh;
@@ -23,5 +24,4 @@ import '../base.css'
 					color: white;
 				}
 		</style>
-	</body>
 </html>
